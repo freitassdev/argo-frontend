@@ -11,9 +11,9 @@ export default function Navbar() {
           <Input placeholder="Pesquisar produto..." className="w-full" />
           <Search className="text-muted-foreground absolute top-1/2 right-3 w-5 h-5 -translate-y-1/2" />
         </div>
-        <Button className="bg-primary">Fazer Login</Button>
-        <Button variant="outline">Criar conta</Button>
         <ThemeToggle className="w-[200px]" />
+        <Button variant="outline">Criar conta</Button>
+        <Button className="bg-primary">Fazer Login</Button>
       </div>
     </div>
   );
