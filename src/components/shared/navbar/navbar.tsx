@@ -12,10 +12,10 @@ export default function Navbar() {
       </div>
       <div className="flex flex-row items-center gap-3 w-fit justify-end">
         <div className="relative w-full">
-          <Input placeholder="Pesquisar produto..." className="w-full" />
+          <Input className="bg-background w-full" placeholder="Pesquisar produto..." />
           <Search className="text-muted-foreground absolute top-1/2 right-3 w-5 h-5 -translate-y-1/2" />
         </div>
-        <ThemeToggle className="w-[200px]" />
+        <ThemeToggle className="w-[200px] bg-background hover:bg-card/60" />
         <Button variant="outline">Criar conta</Button>
         <Button className="bg-primary">Fazer Login</Button>
       </div>

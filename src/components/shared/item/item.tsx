@@ -8,7 +8,7 @@ interface IItemProps {
 }
 export default function Item({ title = "Óculos rosa de coração", price = 100, pricePromo = 80, units = 10 }: IItemProps) {
     return (
-        <div className="w-full h-[400px] bg-primary rounded-2xl p-3 flex flex-col gap-2 items-center">
+        <div className="w-full h-[380px] bg-primary rounded-2xl p-3 flex flex-col gap-2 items-center">
             <Image className="rounded-xl" alt="Imagem do Produto" src={example} />
             <div className="flex flex-col items-center text-center justify-between gap-1 h-full">
                 <h1 className="font-bold text-foreground">{title.length > 28 ? title.substring(0, 28) : title}</h1>
