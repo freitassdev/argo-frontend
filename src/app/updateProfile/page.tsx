@@ -15,20 +15,20 @@ export default function updateProfile(){
             <div className="space-y-4">
               <div>
                 <label className="block mb-1">Nome completo:</label>
-                <input style={{backgroundColor: "#37406e"}} type="text" value="Fulano de tal da silva" className="w-full p-2 rounded text-white"/>
+                <input style={{backgroundColor: "#37406e"}} type="text" placeholder='Fulano de tal da silva' className="w-full p-2 rounded text-white"/>
               </div>
               <div>
                 <label className="block mb-1">Senha:</label>
-                <input style={{backgroundColor: "#37406e"}} type="password" value="MRTETAS"
+                <input style={{backgroundColor: "#37406e"}} type="password" placeholder="MRTETAS"
                 className="w-full p-2 rounded text-white"/>
               </div>
               <div>
                 <label className="block mb-1">Data de nascimento:</label>
-                <input style={{backgroundColor: "#37406e"}} type="text" value="00/00/0000" className="w-full p-2 rounded text-white"/>
+                <input style={{backgroundColor: "#37406e"}} type="text" placeholder="00/00/0000" className="w-full p-2 rounded text-white"/>
               </div>
               <div>
                 <label className="block mb-1">CPF:</label>
-                <input style={{backgroundColor: "#37406e"}} type="text" value="000.000.000-00" className="w-full p-2 rounded text-white"
+                <input style={{backgroundColor: "#37406e"}} type="text" placeholder="000.000.000-00" className="w-full p-2 rounded text-white"
                 />
               </div>
             </div>
@@ -39,17 +39,17 @@ export default function updateProfile(){
             <div className="space-y-4">
               <div>
                 <label className="block mb-1">Email pessoal</label>
-                <input style={{backgroundColor: "#37406e"}} type="text" value="testedeemail@gmail.com" className="w-full p-2 rounded text-white"
+                <input style={{backgroundColor: "#37406e"}} type="text" placeholder="testedeemail@gmail.com" className="w-full p-2 rounded text-white"
                 />
               </div>
               <div>
                 <label className="block mb-1">Telefone Celular</label>
-                <input style={{backgroundColor: "#37406e"}}type="text" value="(00) 00000-0000"  className="w-full p-2 rounded text-white"
+                <input style={{backgroundColor: "#37406e"}}type="text" placeholder="(00) 00000-0000"  className="w-full p-2 rounded text-white"
                 />
               </div>
               <div>
                 <label className="block mb-1">Telefone Comercial</label>
-                <input style={{backgroundColor: "#37406e"}} type="text" value="(00) 00000-0000" className="w-full p-2 rounded text-white"
+                <input style={{backgroundColor: "#37406e"}} type="text" placeholder="(00) 00000-0000" className="w-full p-2 rounded text-white"
                 />
               </div>
             </div>
