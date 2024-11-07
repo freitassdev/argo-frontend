@@ -5,7 +5,7 @@ import HomeHero from "./hero";
 import Navbar from "@/components/shared/navbar/navbar";
 export default function Home() {
   return (
-    <div className="">
+    <div className="overflow-x-hidden">
       <Navbar />
       <HomeHero />
       <div className="flex flex-col gap-4">

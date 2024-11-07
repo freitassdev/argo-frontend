@@ -4,7 +4,7 @@ import glasses from "@/assets/images/glasses.webp"
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient"
 export default function HomeHero() {
     return (
-        <div className="h-[100dvh] w-full flex flex-col items-center justify-center">
+        <div className="h-[100dvh] w-full overflow-x-hidden flex flex-col items-center justify-center">
             <div className="flex flex-col items-center justify-center w-full text-center">
                 <HoverBorderGradient>
                     Veja nossas melhores promoções atuais!
