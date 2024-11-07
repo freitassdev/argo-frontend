@@ -1,5 +1,5 @@
 "use client"
-import Navbar from './../../components/shared/navbar/navbar';
+import Navbar from '@/components/shared/navbar/navbar';
 
 export default function address() {
     return (
