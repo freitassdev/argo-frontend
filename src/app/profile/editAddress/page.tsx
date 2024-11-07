@@ -1,47 +1,60 @@
 "use client"
-export default function EditAddresss() {
-    return (
-        <div className="flex flex-col py-8">
-        <button style={{backgroundColor: "#37406e"}} className="text-white px-4 py-2 rounded-lg mb-4 w-20 font-semibold">Voltar</button>
-        <h2 className="text-2xl font-semibold mb-4">Edite seu endereço</h2>
-        <hr className="border-t border-gray-400 mb-6 w-full max-w-2xl" />
-        <div style={{backgroundColor: "#1a1a4a"}} className="w-full max-w-2xl p-6 rounded-lg">
+
+import GradientTitle from "@/components/shared/gradient-title/gradient-title"
+import Navbar from "@/components/shared/navbar/navbar"
+import ReturnButton from "@/components/shared/return-button/return-button"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Separator } from "@/components/ui/separator"
+
+export default function EditAddress() {
+  return (
+    <div className="flex flex-col gap-4 py-8 mt-16">
+      <Navbar />
+      <div className="flex flex-col gap-2">
+        <ReturnButton />
+        <GradientTitle>Edite seu endereço</GradientTitle>
+      </div>
+      <Separator />
+      <div className="flex flex-col items-center justify-center bg-primary text-foreground p-4 rounded-xl">
+        <div className="max-w-xl w-full">
           <div className="flex flex-col py-2">
             <label className="font-semibold text-white mb-2">País:</label>
-            <input style={{backgroundColor: "#37406e"}} className="h-12 rounded-lg text-white" type="text"/>
+            <Input className="bg-background" />
           </div>
           <div className="flex flex-col py-2">
             <label className="font-semibold text-white mb-2">Nome completo:</label>
-            <input style={{backgroundColor: "#37406e"}} className="h-12 rounded-lg text-white" type="text"/>
+            <Input className="bg-background" />
           </div>
           <div className="flex flex-col py-2">
             <label className="font-semibold text-white mb-2">Telefone:</label>
-            <input style={{backgroundColor: "#37406e"}} className="h-12 rounded-lg text-white" type="text"/>
+            <Input className="bg-background" />
           </div>
           <div className="flex flex-col py-2">
             <label className="font-semibold text-white mb-2">Endereço:</label>
-            <input style={{backgroundColor: "#37406e"}} className="h-12 rounded-lg text-white" type="text"/>
+            <Input className="bg-background" />
           </div>
           <div className="flex flex-col py-2">
             <label className="font-semibold text-white mb-2">Número:</label>
-            <input style={{backgroundColor: "#37406e"}} className="h-12 rounded-lg text-white" type="text"/>
+            <Input className="bg-background" />
           </div>
           <div className="flex flex-col py-2">
             <label className="font-semibold text-white mb-2">Bairro:</label>
-            <input style={{backgroundColor: "#37406e"}} className="h-12 rounded-lg text-white" type="text"/>
+            <Input className="bg-background" />
           </div>
           <div className="flex flex-col py-2">
             <label className="font-semibold text-white mb-2">Cidade:</label>
-            <input style={{backgroundColor: "#37406e"}} className="h-12 rounded-lg text-white" type="text"/>
+            <Input className="bg-background" />
           </div>
           <div className="flex flex-col py-2">
             <label className="font-semibold text-white mb-2">Estado:</label>
-            <input style={{backgroundColor: "#37406e"}} className="h-12 rounded-lg text-white" type="text"/>
+            <Input className="bg-background" />
           </div>
-          <div className="flex justify-center py-2">
-            <button style={{backgroundColor: "#37406e"}} className="text-white px-4 py-2 rounded-lg font-semibold itens-center">Salvar</button>
+          <div className="w-full flex flex-row justify-start py-2">
+            <Button className="bg-transparent px-14 text-white dark:text-primary" variant={"outline"}>Salvar</Button>
           </div>
         </div>
       </div>
-    )
+    </div>
+  )
 }

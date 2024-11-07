@@ -4,7 +4,7 @@ import Navbar from '@/components/shared/navbar/navbar';
 export default function Address() {
     return (
         <div className="flex flex-col items-center py-8">
-            <Navbar></Navbar>
+            <Navbar />
             <h2 className="text-2xl font-semibold py-20">Meus Endereços</h2>
             <hr className="border-t border-gray-400 mb-4 w-full max-w-2xl" />
             <div className="w-full max-w-2xl space-y-4">
