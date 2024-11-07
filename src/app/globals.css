@@ -1,21 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: "DM Sans", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --gradient: #091E3A;
+    --background: 228 98.65% 98.26%;
+    --foreground: 228 7.3% 0.52%;
+
+    --muted: 228 7.3% 91.3%;
+    --muted-foreground: 228 3.65% 41.3%;
+
+    --popover: 228 31.6% 91.3%;
+    --popover-foreground: 228 7.3% 0.65%;
+
+    --card: 228 31.6% 91.3%;
+    --card-foreground: 228 7.3% 0.65%;
+
+    --border: 228 12.3% 89.52%;
+    --input: 228 12.3% 89.52%;
+
+    --primary: 228 73% 13%;
+    --primary-foreground: 228 1.46% 91.3%;
+
+    --secondary: 228 3.65% 95.65%;
+    --secondary-foreground: 228 5.38% 11.3%;
+
+    --accent: 228 3.65% 95.65%;
+    --accent-foreground: 228 5.38% 11.3%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 228 73% 13%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --gradient: #acb6e5;
+
+    --background: 244 33.800000000000004% 6.32%;
+    --foreground: 244 5.2% 98.95%;
+
+    --muted: 244 26% 23.700000000000003%;
+    --muted-foreground: 244 5.2% 57.9%;
+
+    --popover: 244 54.6% 10.27%;
+    --popover-foreground: 244 5.2% 98.95%;
+
+    --card: 244 54.6% 10.27%;
+    --card-foreground: 244 5.2% 98.95%;
+
+    --border: 244 26% 23.700000000000003%;
+    --input: 244 26% 23.700000000000003%;
+
+    --primary: 244 52% 79%;
+    --primary-foreground: 244 5.2% 7.9%;
+
+    --secondary: 244 26% 23.700000000000003%;
+    --secondary-foreground: 244 5.2% 98.95%;
+
+    --accent: 244 26% 23.700000000000003%;
+    --accent-foreground: 244 5.2% 98.95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 244 5.2% 98.95%;
+
+    --ring: 244 52% 79%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
 }
