@@ -6,8 +6,8 @@ export default function AvaliationPage() {
         <div className="flex flex-col items-center py-8">
             <Navbar></Navbar>
             <h2 className="text-2xl font-semibold py-20">Avaliações</h2>
-            <hr className="border-t border-gray-400 mb-4 h-full max-h-2xl" />
-            <div className="h-full max-w-2x1 space-y-2 flex flex-row gap-5">
+            <hr className="border-t border-gray-400h-full max-h-2xl" />
+            <div className="h-full max-w-2x1  flex flex-row gap-5">
                 <div style={{ backgroundColor: "#1a1a4a" }} className="text-white p-4 rounded">
                     <h3 className="text-lg font-semibold">Cliente 1</h3>
                     <h5 className="text-lg ">EstrelaPlaceholder</h5>
