@@ -1,7 +1,7 @@
 "use client"
-import Navbar from './../../components/shared/navbar/navbar';
+import Navbar from '@/components/shared/navbar/navbar';
 
-export default function updateProfile(){
+export default function UpdateProfile(){
     return(
     <div className="flex flex-col items-center py-8 min-h-screen">
       <Navbar></Navbar>

@@ -1,5 +1,5 @@
 "use client"
-export default function editAddresss() {
+export default function EditAddresss() {
     return (
         <div className="flex flex-col py-8">
         <button style={{backgroundColor: "#37406e"}} className="text-white px-4 py-2 rounded-lg mb-4 w-20 font-semibold">Voltar</button>

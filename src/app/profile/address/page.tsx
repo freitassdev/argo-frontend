@@ -1,7 +1,7 @@
 "use client"
-import Navbar from './../../components/shared/navbar/navbar';
+import Navbar from '@/components/shared/navbar/navbar';
 
-export default function address() {
+export default function Address() {
     return (
         <div className="flex flex-col items-center py-8">
             <Navbar></Navbar>

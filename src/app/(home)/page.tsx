@@ -14,7 +14,7 @@ export default function Home() {
             <p className="text-md text-foreground">Seja bem vindo(a)!</p>
             <p className="text-lg text-foreground">Veja as principais promoções da semana, estão imperdíveis!</p>
           </div>
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid grid-cols-4 gap-3 overflow-x-hidden">
             {Array.from({ length: 20 }).map((_, index) => (
               <Item key={index} />
             ))}

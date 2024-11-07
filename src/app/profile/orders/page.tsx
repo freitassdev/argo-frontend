@@ -1,7 +1,7 @@
 "use client"
-import Navbar from './../../components/shared/navbar/navbar';
+import Navbar from '@/components/shared/navbar/navbar';
 
-export default function orders() {
+export default function Orders() {
     return (
         <div className="flex flex-col items-center">
             <Navbar></Navbar>
