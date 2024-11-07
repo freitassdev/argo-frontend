@@ -1,10 +1,10 @@
 import Image from "next/image"
 import example from "@/assets/images/product-example.png"
 interface IItemProps {
-    title: string;
-    price: number;
-    pricePromo: number;
-    units: number;
+    title?: string;
+    price?: number;
+    pricePromo?: number;
+    units?: number;
 }
 export default function Item({ title = "Óculos rosa de coração", price = 100, pricePromo = 80, units = 10 }: IItemProps) {
     return (
