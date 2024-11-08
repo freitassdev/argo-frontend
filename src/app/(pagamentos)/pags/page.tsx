@@ -48,12 +48,12 @@ export default function AddressSelection() {
     return (
         <>
             <Navbar />
-            <div className="min-h-screen bg-900 flex flex-col items-center p-6 mt-32 ">
+            <div className="min-h-screen flex flex-col items-center p-6 mt-32 ">
                 {/* Título */}
                 <h1 className="text-2xl font-bold mb-4">Escolha um endereço para entrega</h1>
 
                 {/* Container de endereços */}
-                <div className="w-full max-w-md bg-primary text-white p-4 rounded-lg shadow-lg ">
+                <div className="w-full max-w-md shadow-lg bg-background/50 backdrop-blur-md border px-2 saturate-100 p-4 rounded-lg ">
                     <h2 className="text-xl font-semibold mb-4">Seus endereços</h2>
 
                     {/* Renderizando endereços dinamicamente */}
@@ -68,12 +68,12 @@ export default function AddressSelection() {
 
                                 }}
 
-                                key={address.id} className="flex items-center justify-between bg-white text-[#262626] p-2 rounded mb-4">
+                                key={address.id} className="flex items-center justify-between bg-background/50 backdrop-blur-md text-[#262626] p-2 rounded mb-4 border px-2 saturate-100">
                                 <label className="flex items-center gap-2">
                                     <input type="radio" name="address" className="form-radio text-blue-500" />
-                                    <span className="font-medium">{address.name}</span>
+                                    <span className="font-medium dark:text-white">{address.name}</span>
                                 </label>
-                                <span className="text-sm">{address.details}</span>
+                                <span className="text-sm dark:text-white">{address.details}</span>
                             </motion.div>
                         ))}
                     </AnimatePresence>
