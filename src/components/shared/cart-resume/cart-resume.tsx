@@ -30,4 +30,4 @@ export default function CartResume() {
             <Button className="w-full bg-transparent hover:text-white hover:bg-white/10" variant={"outline"}>Voltar</Button>
         </div>
     )
-}
+}            
