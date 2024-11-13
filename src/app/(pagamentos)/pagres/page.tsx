@@ -51,7 +51,7 @@ export default function CheckoutPage() {
 
                         <div className="flex items-center justify-between bg-background/50 backdrop-blur-md border saturate-100 p-4 rounded-lg p-4 rounded mb-4">
                             <div className="flex items-center gap-4">
-                                <Image src={glasses} className="w-20 h-20 rounded" />
+                                <Image  src={glasses} className="w-20 h-20 rounded" />
                                 <div>
                                     <h2 className="text-lg font-semibold">Produto</h2>
                                     <p className="text-sm mt-1">R$ {productPrice.toFixed(2)}</p>
