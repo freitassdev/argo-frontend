@@ -19,7 +19,7 @@ export default function BannersSection() {
         <div className="flex flex-col gap-2 w-full">
             <Carousel
                 plugins={[plugin.current]}
-                className="w-full max-w-[80%] mx-auto"
+                className="w-full max-sm:max-w-full max-w-[80%] mx-auto"
                 
             >
                 <CarouselContent className="w-full">
