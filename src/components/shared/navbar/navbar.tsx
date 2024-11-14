@@ -5,9 +5,23 @@ import ThemeToggle from "@/components/shared/theme-toggle/theme-toggle";
 import logo from "@/assets/images/black-logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion"
+
 export default function Navbar() {
   return (
-    <div className="fixed inset-x-0 top-4 z-50 md:mx-auto flex h-[60px] items-center justify-between rounded-lg border px-2 saturate-100 transition-all duration-200 max-sm:mx-3 sm:mx-3 md:w-[600px] lg:w-[800px] xl:w-[1100px] 2xl:w-[1300px] shadow-lg bg-background/50 backdrop-blur-md ">
+    <motion.div
+      initial={{
+        y: -100,
+        opacity: 0
+      }}
+      animate={{
+        y: 0,
+        opacity: 1,
+        transition: {
+          damping: 0
+        }
+      }}
+      className="fixed inset-x-0 top-4 z-50 md:mx-auto flex h-[60px] items-center justify-between rounded-lg border px-2 saturate-100 transition-all duration-200 max-sm:mx-3 sm:mx-3 md:w-[600px] lg:w-[800px] xl:w-[1100px] 2xl:w-[1300px] shadow-lg bg-background/50 backdrop-blur-md ">
       <div className="flex flex-row items-center">
         <Image alt="logo" priority src={logo} className="h-[40px] w-auto dark:invert" />
       </div>
@@ -24,6 +38,6 @@ export default function Navbar() {
           <Button className="bg-primary">Fazer Login</Button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }
