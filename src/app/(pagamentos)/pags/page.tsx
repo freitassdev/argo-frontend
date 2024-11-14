@@ -50,10 +50,10 @@ export default function AddressSelection() {
             <Navbar />
             <div className="min-h-screen flex flex-col items-center p-6 mt-32 ">
                 {/* Título */}
-                <h1 className="text-2xl font-bold mb-4">Escolha um endereço para entrega</h1>
+                <h1 className="text-3xl font-bold mb-4">Escolha um endereço para entrega</h1>
 
                 {/* Container de endereços */}
-                <div className="w-full max-w-md shadow-lg bg-background/50 backdrop-blur-md border px-2 saturate-100 p-4 rounded-lg ">
+                <div className="w-full max-w-md shadow-lg bg-background/50 backdrop-blur-md border px-2 saturate-100 p-4 rounded-lg">
                     <h2 className="text-xl font-semibold mb-4">Seus endereços</h2>
 
                     {/* Renderizando endereços dinamicamente */}

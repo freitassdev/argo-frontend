@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import Navbar from './navbarPags';
+import Navbar from '@/app/(pagamentos)/pags/navbarPags';
 import Image from "next/image";
 import glasses from "@/assets/images/product-example.png";
 import correio from "@/assets/images/correio.webp";
@@ -51,7 +51,7 @@ export default function CheckoutPage() {
 
                         <div className="flex items-center justify-between bg-background/50 backdrop-blur-md border saturate-100 p-4 rounded-lg p-4 rounded mb-4">
                             <div className="flex items-center gap-4">
-                                <Image  src={glasses} className="w-20 h-20 rounded" />
+                                <Image alt='oculos' src={glasses} className="w-20 h-20 rounded" />
                                 <div>
                                     <h2 className="text-lg font-semibold">Produto</h2>
                                     <p className="text-sm mt-1">R$ {productPrice.toFixed(2)}</p>
@@ -86,7 +86,7 @@ export default function CheckoutPage() {
                                         </DialogHeader>
                                         <div className="space-y-4">
                                             <div className="flex items-center dark:text-white bg-background/50 backdrop-blur-md text-[#262626] p-2 rounded mb-4 border px-2 saturate-100 gap-x-4">
-                                            <Image src={correio} className="w-11 h-11 rounded" />
+                                            <Image alt='correios logo' src={correio} className="w-11 h-11 rounded" />
                                                 <input
                                                     type="radio"
                                                     id="standard"
@@ -99,7 +99,7 @@ export default function CheckoutPage() {
                                                 <Label htmlFor="standard">Correios - Frete: R$ 20,00</Label>
                                             </div>
                                             <div className="flex items-center dark:text-white bg-background/50 backdrop-blur-md text-[#262626] p-2 rounded mb-4 border px-2 saturate-100 gap-x-4">
-                                            <Image src={correio2} className="w-11 h-11 rounded" />
+                                            <Image alt='lalamovel logo' src={correio2} className="w-11 h-11 rounded" />
                                                 <input
                                                     type="radio"
                                                     id="express"

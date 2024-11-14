@@ -8,30 +8,28 @@ import barras from "@/assets/images/barras.png";
 export default function PaymentPage() {
     const [selectedPayment, setSelectedPayment] = useState('');
 
-    const handleSelectPayment = (method) => {
+    const handleSelectPayment = (method: React.SetStateAction<string>) => {
         setSelectedPayment(method);
     };
 
     return (
         <>
         <Navbar />
-        <div className="min-h-screen p-6 flex flex-col items-center mt-32">
+        <div className="min-h-screen flex flex-col items-center p-6 mt-32">
             {/* Botão Voltar */}
           
 
             {/* Título */}
             <h1 className="text-3xl font-bold mb-4">Formas de pagamento</h1>
-            <hr className="border-gray-300 w-full max-w-4xl mb-6" />
 
             {/* Seção de pagamento */}
-            <div className="bg-blue-900 text-white p-6 rounded-lg shadow-lg w-full max-w-4xl">
+            <div className="shadow-lg bg-background/50 backdrop-blur-md border px-2 saturate-100 p-4 rounded-lg w-full max-w-xl ">
                 {/* Pix */}
-                <div className="mb-6">
-                    <h2 className="text-xl font-bold flex items-center gap-2">
-                    <Image  src={pix} className="w-20 h-20 rounded" /> Pix
+                <div className="mb-6 flex flex-wrap items-center dark:text-white bg-background/50 backdrop-blur-md text-[#262626] p-2 rounded mb-4 border px-2 saturate-100 gap-x-4">
+                    <h2 className="text-xl font-bold flex items-center gap-2 flex-1 sm:w-auto">
+                    <Image alt="pix logo" src={pix} className="w-20 h-20 rounded " /> PIX
                     </h2>
-                    <hr className="my-2 border-gray-500" />
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 sm:w-auto">
                         <input
                             type="radio"
                             name="payment"
@@ -40,17 +38,16 @@ export default function PaymentPage() {
                             onChange={() => handleSelectPayment('pix')}
                             className="accent-blue-600"
                         />
-                        <p>Copie o código pix para identificar seu pagamento ou leia o QR code no aplicativo do seu banco</p>
+                        <p className="text-sm max-w-xs">Copie o código PIX para identificar seu pagamento ou leia o QR code no aplicativo do seu Banco.</p>
                     </div>
                 </div>
 
                 {/* Boleto */}
-                <div>
-                    <h2 className="text-xl font-bold flex items-center gap-2">
-                    <Image  src={barras} className="w-20 h-20 rounded" /> Boleto
+                <div className="mb-6 flex flex-wrap items-center dark:text-white bg-background/50 backdrop-blur-md text-[#262626] p-2 rounded mb-4 border px-2 saturate-100 gap-x-4">
+                    <h2 className="text-xl font-bold flex items-center gap-2 flex-1 sm:w-auto">
+                    <Image alt="codigo de barras logo" src={barras} className="w-20 h-20 rounded" /> Boleto
                     </h2>
-                    <hr className="my-2 border-gray-500" />
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 sm:w-auto">
                         <input
                             type="radio"
                             name="payment"
@@ -59,13 +56,13 @@ export default function PaymentPage() {
                             onChange={() => handleSelectPayment('boleto')}
                             className="accent-blue-600"
                         />
-                        <p>Efetue o pagamento no Banco mais próximo, ou pelo internet banking copiando o número do boleto e utilizando-o no aplicativo do seu Banco.</p>
+                        <p className="text-sm max-w-xs">Efetue o pagamento no Banco mais próximo, ou pelo internet banking copiando o número do boleto e utilizando-o no aplicativo do seu Banco.</p>
                     </div>
                 </div>
             </div>
 
             {/* Botão de finalizar compra */}
-            <button className="mt-6 bg-black text-white w-full max-w-md py-3 rounded">
+            <button className="mt-6 bg-primary text-white dark:text-black w-full max-w-md py-3 rounded">
                 Finalizar compra
             </button>
         </div>
