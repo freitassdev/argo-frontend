@@ -62,7 +62,7 @@ export default function PaymentPage() {
             </div>
 
             {/* Botão de finalizar compra */}
-            <button className="mt-6 bg-primary text-white dark:text-black w-full max-w-md py-3 rounded">
+            <button className="mt-6 bg-primary text-white dark:text-black w-full max-w-md py-3 rounded" onClick={() => window.location.href = '/pagcod'}>
                 Finalizar compra
             </button>
         </div>

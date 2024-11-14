@@ -138,7 +138,7 @@ export default function CheckoutPage() {
                 </div>
 
                 {/* Botão de pagamento */}
-                <button className="mt-6 bg-primary text-white dark:text-black w-full max-w-md py-3 rounded">Pagamento</button>
+                <button className="mt-6 bg-primary text-white dark:text-black w-full max-w-md py-3 rounded" onClick={() => window.location.href = '/pagform'}>Pagamento</button>
             </div>
         </>
     );
