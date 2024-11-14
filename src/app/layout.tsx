@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/theme.provider";
-
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,6 +21,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           {children}
         </ThemeProvider>
+        <Toaster position="top-center"/>
       </body>
     </html>
   );
