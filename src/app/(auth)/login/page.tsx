@@ -4,6 +4,7 @@ import ReturnButton from "@/components/shared/return-button/return-button"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
+import { useUserStore } from "@/hooks/useUserStore";
 import axios from "@/services/axios.service";
 import Link from "next/link"
 import { useRouter } from "next/navigation";
@@ -15,6 +16,7 @@ export default function LoginPage() {
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
     const router = useRouter()
+    const { setUser } = useUserStore((state) => state)
     const handleLogin = async () => {
         if (!email || !password) return toast.error('Preencha todos os campos!');
         setLoading(true)
@@ -24,6 +26,16 @@ export default function LoginPage() {
             if(response.data.error) return toast.error(response.data.error);
             if(response.data.autenticado) {
                 toast.success('Login efetuado com sucesso!')
+                setUser({
+                    id: response.data.userDados.USRID,
+                    name: response.data.userDados.USRNOME,
+                    email: response.data.userDados.USREMAIL,
+                    cpf: response.data.userDados.USRCPF,
+                    dateOfBirth: response.data.userDados.USRDTNASC,
+                    accessNivel: response.data.userDados.USRNIVELACESSO,
+                    blocked: response.data.userDados.USRBLOQUEADO,
+                    sessionId: response.data.sessionId
+                })
                 setTimeout(() => {
                     router.push('/')
                 }, 2000)
