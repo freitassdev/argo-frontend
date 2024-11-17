@@ -8,3 +8,38 @@ export interface IUser {
     email: string;
     sessionId: string;
 }
+
+export interface IProduct {
+    ID: number;
+    NOME: string;
+    IMGPATH: string;
+    VALOR: string;
+    DESCONTO: string;
+    DESCRICAO: string;
+    MARCA: EMarcasNome;
+    COR: EColors;
+}
+
+export enum EUserAccessNivel {
+    ADMIN = 1,
+    WORKER = 2,
+    USER = 3
+}
+
+export enum EColors {
+    ROXO = 1,
+    VERMELHO = 3
+}
+
+export enum EMarcasNome {
+    RAYBAN = 1,
+}
+
+export const EColorsNames: Record<EColors, string> = {
+    [EColors.ROXO]: 'Roxo',
+    [EColors.VERMELHO]: 'Vermelho',
+}
+
+export const EMarcas: Record<EMarcasNome, string> = {
+    [EMarcasNome.RAYBAN]: 'RayBan',
+}
