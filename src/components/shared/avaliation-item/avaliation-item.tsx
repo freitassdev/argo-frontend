@@ -30,7 +30,7 @@ export default function AvaliationItem({ avaliation }: { avaliation: IAvaliation
                     alt="Foto da Avaliação (enviada pelo clinte)"
                     width={300}
                     height={300}
-                    className="w-full h-auto" />
+                    className="w-full h-auto rounded-lg" />
             </div>
         </div>
     )

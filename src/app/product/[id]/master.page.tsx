@@ -70,7 +70,7 @@ export default function MasterProductPage({ id }: { id: string }) {
     return (
         <>
             {product && (
-                <div className="mt-24 flex flex-col gap-3">
+                <div className="mt-24 flex flex-col gap-3 pb-4">
                     <GradientTitle className="mx-auto text-center text-5xl py-0">
                         Detalhes do Produto
                     </GradientTitle>
