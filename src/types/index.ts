@@ -20,6 +20,15 @@ export interface IProduct {
     COR: EColors;
 }
 
+export interface IAvaliation {
+    usuario: string;
+    produto: string;
+    nota: number;
+    comentario: string;
+    qualidade_produto: string;
+    imagem: string;
+}
+
 export enum EUserAccessNivel {
     ADMIN = 1,
     WORKER = 2,

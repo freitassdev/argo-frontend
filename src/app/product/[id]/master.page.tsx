@@ -1,16 +1,18 @@
 'use client';
 import { useEffect, useState } from "react";
 import axios from "@/services/axios.service";
-import { EColorsNames, EMarcas, IProduct } from "@/types";
+import { EColorsNames, EMarcas, IAvaliation, IProduct } from "@/types";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import ReturnButton from "@/components/shared/return-button/return-button";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import GradientTitle from "@/components/shared/gradient-title/gradient-title";
+import AvaliationItem from "@/components/shared/avaliation-item/avaliation-item";
 
 export default function MasterProductPage({ id }: { id: string }) {
     const [product, setProduct] = useState<IProduct | null>(null);
+    const [avaliations, setAvaliations] = useState<IAvaliation[]>([]);
     const router = useRouter();
     useEffect(() => {
         const fetchProduct = async () => {
@@ -39,6 +41,27 @@ export default function MasterProductPage({ id }: { id: string }) {
         }
         fetchProduct();
     }, [id, router, product])
+
+    useEffect(() => {
+        if (product && product.ID) {
+            const fetchAvaliations = async () => {
+                try {
+                    const { data } = await axios.post('avaliation/consultar_avaliacoes.php', {
+                        produtoId: product.ID
+                    })
+                    if (!data || data.error) {
+                        toast.error(data?.message || 'Erro ao buscar avaliações!');
+                        return;
+                    }
+
+                    setAvaliations(data.avaliacoes);
+                } catch {
+                    toast.error('Erro ao buscar avaliações!');
+                }
+            }
+            fetchAvaliations();
+        }
+    }, [product])
 
     function addToCart() {
         toast.success('Produto adicionado ao carrinho!');
@@ -91,6 +114,11 @@ export default function MasterProductPage({ id }: { id: string }) {
                     <GradientTitle className="mx-auto text-center text-5xl ">
                         Avaliações do Produto
                     </GradientTitle>
+                    <div className="grid grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-5">
+                        {avaliations.map((avaliation, i) => (
+                            <AvaliationItem key={i} avaliation={avaliation} />
+                        ))}
+                    </div>
                 </div>
             )}
         </>
