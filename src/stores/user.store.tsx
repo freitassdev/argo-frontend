@@ -38,13 +38,13 @@ export const userStore = create<UserStore>()(
     }),
     {
       name: 'user-store',
-      partialize: (state) => ({ 
-        id: state.id, 
-        accessNivel: state.accessNivel, 
-        name: state.name, 
-        email: state.email, 
-        blocked: state.blocked, 
-        cpf: state.cpf, 
+      partialize: (state) => ({
+        id: state.id,
+        accessNivel: state.accessNivel,
+        name: state.name,
+        email: state.email,
+        blocked: state.blocked,
+        cpf: state.cpf,
         dateOfBirth: state.dateOfBirth,
         sessionId: state.sessionId
       }), // Escolhe quais estados serão persistidos

@@ -10,6 +10,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
+import { setCookie } from "cookies-next";
 
 export default function LoginPage() {
     const [email, setEmail] = useState('')
@@ -25,7 +26,7 @@ export default function LoginPage() {
             if(response.status !== 200) return toast.error('Erro ao fazer login!');
             if(response.data.error) return toast.error(response.data.error);
             if(response.data.autenticado) {
-                toast.success('Login efetuado com sucesso!')
+                toast.success('Login efetuado com sucesso! Redirecionando...')
                 setUser({
                     id: response.data.userDados.USRID,
                     name: response.data.userDados.USRNOME,
@@ -36,6 +37,8 @@ export default function LoginPage() {
                     blocked: response.data.userDados.USRBLOQUEADO,
                     sessionId: response.data.sessionId
                 })
+                setCookie('userAccessNivel', response.data.userDados.USRNIVELACESSO)
+
                 setTimeout(() => {
                     router.push('/')
                 }, 2000)
