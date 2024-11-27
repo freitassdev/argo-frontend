@@ -10,10 +10,10 @@ export default function Address() {
     return (
         <div className="flex flex-col w-full pb-8 gap-4 mt-24">
             <Navbar />
-            <div className="flex flex-col gap-2">
-                <ReturnButton />
-                <GradientTitle>Edite seu endereço</GradientTitle>
+            <div className="flex flex-col items-center">
+                <GradientTitle>Seus endereços</GradientTitle>
             </div>
+                <ReturnButton />
             <Separator />
             <div className="w-full grid grid-cols-2 gap-3">
                 <div className="flex flex-col bg-primary text-white dark:text-foreground p-4 gap-3 rounded-xl">
