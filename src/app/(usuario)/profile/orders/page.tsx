@@ -61,6 +61,12 @@ export default function Address() {
 
                     </div>
                 </div>
+                <div className='flex flex-col gap-3 items-center justify-center'>
+                    <h1 className='text-xl'>Em Andamento</h1>
+                    <div className='flex flex-col gap-2 items-center justify-center'>
+
+                    </div>
+                </div>
             </div>
         </div>
     )

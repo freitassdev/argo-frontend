@@ -1,53 +1,41 @@
 'use client';
 
-import { IUser } from '@/types';
+import { ICart, ICartItem } from '@/types';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-export type UserState = IUser;
-export type UserActions = {
-  setUser: (user: IUser) => void;
-  resetUser: () => void;
+export type CartState = ICart;
+export type CartActions = {
+    setCartItems: (items: ICartItem[]) => void;
 };
 
-export type UserStore = UserState & UserActions;
+export type CartStore = CartState & CartActions;
 
-const baseUser: IUser = {
-  id: 0,
-  accessNivel: 0,
-  name: '',
-  blocked: false,
-  cpf: '',
-  dateOfBirth: '',
-  email: '',
-  sessionId: ''
+const baseCart: ICart = {
+    items: [],
+    total: '0.00',
 };
 
-export const userStore = create<UserStore>()(
-  persist(
-    (set) => ({
-      ...baseUser,
-      setUser: (user: IUser) =>
-        set(() => ({
-          ...user
-        })),
-      resetUser: () =>
-        set(() => ({
-          ...baseUser
-        }))
-    }),
-    {
-      name: 'user-store',
-      partialize: (state) => ({
-        id: state.id,
-        accessNivel: state.accessNivel,
-        name: state.name,
-        email: state.email,
-        blocked: state.blocked,
-        cpf: state.cpf,
-        dateOfBirth: state.dateOfBirth,
-        sessionId: state.sessionId
-      }), // Escolhe quais estados serão persistidos
-    }
-  )
+export const cartStore = create<CartStore>()(
+    persist(
+        (set) => ({
+            ...baseCart,
+            setCartItems: (items) => {
+                const totalCartPrice = items.reduce((acc, item) => {
+                    return acc + parseFloat(item.price);
+                }, 0);
+                return set(() => ({
+                    items: items,
+                    total: totalCartPrice.toFixed(2),
+                }))
+            }
+        }),
+        {
+            name: 'cart-store',
+            partialize: (state) => ({
+                total: state.total,
+                items: state.items,
+            }), // Escolhe quais estados serão persistidos
+        }
+    )
 );

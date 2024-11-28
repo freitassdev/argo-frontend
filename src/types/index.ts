@@ -68,3 +68,8 @@ export interface ICartItem {
     price: string;
     description: string;
 }
+
+export interface ICart {
+    items: ICartItem[];
+    total: string;
+}
