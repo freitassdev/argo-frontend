@@ -52,3 +52,19 @@ export const EColorsNames: Record<EColors, string> = {
 export const EMarcas: Record<EMarcasNome, string> = {
     [EMarcasNome.RAYBAN]: 'RayBan',
 }
+
+export interface IAddress {
+    id: string | number;
+    street: string;
+    number: string;
+    city: string;
+    complement: string;
+    cep: string;
+}
+
+export interface ICartItem {
+    id: number;
+    name: string;
+    price: string;
+    description: string;
+}

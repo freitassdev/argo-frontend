@@ -1,64 +1,64 @@
-"use client"
+/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
+import { useEffect, useState } from 'react';
+import GradientTitle from '@/components/shared/gradient-title/gradient-title';
 import Navbar from '@/components/shared/navbar/navbar';
+import ReturnButton from '@/components/shared/return-button/return-button';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
+import { Label } from "@/components/ui/label"
+import axios from '@/services/axios.service';
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+import { toast } from 'sonner';
+import { useUserStore } from '@/hooks/useUserStore';
+import { IAddress } from '@/types';
 
-export default function Orders() {
+export default function Address() {
+    const { id } = useUserStore((state) => state);
+
+    
+
+    useEffect(() => {
+            const fetchAddress = async () => {
+                const { data } = await axios.post('consulta/consulta.php', {
+                    tipo: "pedidos",
+                })
+                console.log(data)
+                // data.map((item: any) => ({
+                //     id: item.ENDID,
+                //     street: item.ENDRUA,
+                //     number: item.ENDNUMERO,
+                //     city: item.ENDCIDADE,
+                //     complement: item.ENDCOMPLEMENTO,
+                //     cep: item.ENDCEP
+                // }))
+            }
+            fetchAddress();
+    }, [])
+
+
     return (
-        <div className="flex flex-col items-center">
-            <Navbar></Navbar>
-            <h2 className="text-2xl font-semibold mb-6 py-40">Meu perfil</h2>
-            <div className='flex flex-row gap-10'>
-                <div style={{backgroundColor: "#1a1a4a"}}  className=" text-white p-6 rounded-lg w-80">
-                    <h3 className="text-center text-lg font-semibold mb-4">Pedidos Finalizados</h3>
-                    <hr className="border-gray-400 mb-4" />
-                    <div className="">
-                        <div className="flex flex-row gap-2">
-                            <div style={{height:"80px"}} className="bg-gray-500 w-28 mb-4 py-4 rounded-lg"></div>
-                            <div style={{backgroundColor: "#37406e", height:"80px"}} className="flex flex-col space-x-4 p-4 w-60 rounded-lg">
-                                <p>Código:</p>
-                                <p>Data:</p>
-                            </div>
-                        </div>
-                        <div className="flex flex-row gap-2">
-                            <div style={{height:"80px"}} className="bg-gray-500 w-28 mb-4 py-4 rounded-lg"></div>
-                            <div style={{backgroundColor: "#37406e", height:"80px"}} className="flex flex-col space-x-4 p-4 w-60 rounded-lg">
-                                <p>Código:</p>
-                                <p>Data:</p>
-                            </div>
-                        </div>
-                        <div className="flex flex-row gap-2">
-                            <div style={{height:"80px"}} className="bg-gray-500 w-28 mb-4 py-4 rounded-lg"></div>
-                            <div style={{backgroundColor: "#37406e", height:"80px"}} className="flex flex-col space-x-4 p-4 w-60 rounded-lg">
-                                <p>Código:</p>
-                                <p>Data:</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div style={{backgroundColor: "#1a1a4a"}}  className=" text-white p-6 rounded-lg w-80">
-                    <h3 className="text-center text-lg font-semibold mb-4">Pedidos Em Andamento</h3>
-                    <hr className="border-gray-400 mb-4" />
-                    <div className="">
-                        <div className="flex flex-row gap-2">
-                            <div style={{height:"80px"}} className="bg-gray-500 w-28 mb-4 py-4 rounded-lg"></div>
-                            <div style={{backgroundColor: "#37406e", height:"80px"}} className="flex flex-col space-x-4 p-4 w-60 rounded-lg">
-                                <p>Código:</p>
-                                <p>Data:</p>
-                            </div>
-                        </div>
-                        <div className="flex flex-row gap-2">
-                            <div style={{height:"80px"}} className="bg-gray-500 w-28 mb-4 py-4 rounded-lg"></div>
-                            <div style={{backgroundColor: "#37406e", height:"80px"}} className="flex flex-col space-x-4 p-4 w-60 rounded-lg">
-                                <p>Código:</p>
-                                <p>Data:</p>
-                            </div>
-                        </div>
-                        <div className="flex flex-row gap-2">
-                            <div style={{height:"80px"}} className="bg-gray-500 w-28 mb-4 py-4 rounded-lg"></div>
-                            <div style={{backgroundColor: "#37406e", height:"80px"}} className="flex flex-col space-x-4 p-4 w-60 rounded-lg">
-                                <p>Código:</p>
-                                <p>Data:</p>
-                            </div>
-                        </div>
+        <div className="flex flex-col w-full pb-8 gap-4 mt-24">
+            <Navbar />
+            <div className="flex flex-col items-center">
+                <GradientTitle>Seus Pedidos</GradientTitle>
+            </div>
+            <ReturnButton />
+            <Separator />
+            <div className="w-full grid grid-cols-2 gap-3">
+                <div className='flex flex-col gap-3 items-center justify-center'>
+                    <h1 className='text-xl'>Finalizados</h1>
+                    <div className='flex flex-col gap-2 items-center justify-center'>
+
                     </div>
                 </div>
             </div>
