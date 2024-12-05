@@ -22,7 +22,8 @@ export const cartStore = create<CartStore>()(
             ...baseCart,
             setCartItems: (items) => {
                 const totalCartPrice = items.reduce((acc, item) => {
-                    return acc + parseFloat(item.price);
+                    const price = parseFloat(item.price);
+                    return acc + (isNaN(price) ? 0 : price);
                 }, 0);
                 return set(() => ({
                     items: items,

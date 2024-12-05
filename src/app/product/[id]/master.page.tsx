@@ -9,14 +9,16 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import GradientTitle from "@/components/shared/gradient-title/gradient-title";
 import AvaliationItem from "@/components/shared/avaliation-item/avaliation-item";
-
+import useCart from "@/hooks/useCart";
+import { useCartStore } from "@/hooks/useCartStore";
 export default function MasterProductPage({ id }: { id: string }) {
     const [product, setProduct] = useState<IProduct | null>(null);
     const [avaliations, setAvaliations] = useState<IAvaliation[]>([]);
     const router = useRouter();
+    const { addToCart, removeFromCart } = useCart();
+    const { items } = useCartStore((state) => state);
     useEffect(() => {
         const fetchProduct = async () => {
-
             if (product) return;
             try {
                 const { data } = await axios.post('consulta/consulta.php', {
@@ -63,10 +65,14 @@ export default function MasterProductPage({ id }: { id: string }) {
         }
     }, [product])
 
-    function addToCart() {
+    function addItemToCart(product: IProduct) {
+        addToCart(product);
         toast.success('Produto adicionado ao carrinho!');
     }
 
+    function hasOnCart(id: number) {
+        return items.find((item) => item.id === id);
+    }
     return (
         <>
             {product && (
@@ -78,9 +84,15 @@ export default function MasterProductPage({ id }: { id: string }) {
                     <div className="w-full flex flex-row max-md:flex-col gap-5">
                         <div className="w-[40%] max-md:w-full flex flex-col gap-2">
                             <Image width={300} height={300} className="w-full border border-border h-auto rounded-2xl" alt="Imagem do Produto" src={(process.env.NEXT_PUBLIC_BASE_UPLOADS_FOLDER || '') + (product?.IMGPATH)} />
-                            <Button onClick={addToCart} className="rounded-xl">
-                                Adicionar ao Carrinho
-                            </Button>
+                            {hasOnCart(product.ID) ? (
+                                <Button onClick={() => removeFromCart(product)} className="rounded-xl">
+                                    Remover do Carrinho
+                                </Button>
+                            ) : (
+                                <Button onClick={() => addItemToCart(product)} className="rounded-xl">
+                                    Adicionar ao Carrinho
+                                </Button>
+                            )}
                         </div>
                         <div className="bg-primary text-primary-foreground w-full rounded-2xl p-5 flex flex-col items-center gap-3">
                             <div className="max-w-lg flex flex-col gap-3  w-full">
@@ -119,8 +131,9 @@ export default function MasterProductPage({ id }: { id: string }) {
                             <AvaliationItem key={i} avaliation={avaliation} />
                         ))}
                     </div>
-                </div>
-            )}
+                </div >
+            )
+            }
         </>
     )
 }

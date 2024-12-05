@@ -67,6 +67,8 @@ export interface ICartItem {
     name: string;
     price: string;
     description: string;
+    image: string;
+    
 }
 
 export interface ICart {

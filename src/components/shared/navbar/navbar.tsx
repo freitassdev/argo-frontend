@@ -49,9 +49,15 @@ export default function Navbar() {
             <Search className="text-muted-foreground absolute top-1/2 right-3 w-5 h-5 -translate-y-1/2" />
           </div>
           <ThemeToggle className="max-lg:w-[100px] w-[200px] bg-background hover:bg-card/60" />
+
           {
             name ? (
-              <UserMenu />
+              <>
+                <Link href="/cart">
+                  <Button className="max-lg:hidden bg-primary">Ver Carrinho</Button>
+                </Link>
+                <UserMenu />
+              </>
             ) : (
               <>
                 <Link href="/cadastro">
