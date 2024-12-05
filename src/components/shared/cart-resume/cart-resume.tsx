@@ -29,7 +29,7 @@ export default function CartResume({ total, quantity }: { total: string, quantit
                 </div>
             </div>
             <Separator />
-            <Button className="w-full bg-background" variant={"secondary"} disabled={quantity === 0}>Continuar</Button>
+            <Button className="w-full bg-background" variant={"secondary"} disabled={quantity === 0} onClick={() => router.push('/pags')}>Continuar</Button>
             <Button className="w-full bg-transparent hover:text-white hover:bg-white/10" variant={"outline"} onClick={() => router.back()}>Voltar</Button>
         </div>
     )
