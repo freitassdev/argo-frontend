@@ -1,9 +1,12 @@
+'use client';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { useRouter } from "next/navigation";
 
-export default function CartResume() {
+export default function CartResume({ total, quantity }: { total: string, quantity: number }) { 
+    const router = useRouter()
     return (
         <div className="w-full flex flex-col gap-3 items-center p-4 bg-primary text-white shadow-xl rounded-2xl border border-border ">
             <div className="contents gap-1">
@@ -11,11 +14,11 @@ export default function CartResume() {
                 <Separator />
                 <div className="flex flex-col gap-0 items-start w-full">
                     <Label className="text-sm font-normal">Subtotal:</Label>
-                    <h1 className="font-semibold text-xl">R$ 696,99</h1>
+                    <h1 className="font-semibold text-xl">R$ {total}</h1>
                 </div>
                 <div className="flex flex-col gap-0 items-start w-full">
                     <Label className="text-sm font-normal">Quantidade:</Label>
-                    <h1 className="font-semibold text-xl">69 itens.</h1>
+                    <h1 className="font-semibold text-xl">{quantity} itens.</h1>
                 </div>
                 <div className="flex flex-col gap-1 items-start w-full ">
                     <Label>Inserir cupom</Label>
@@ -26,8 +29,8 @@ export default function CartResume() {
                 </div>
             </div>
             <Separator />
-            <Button className="w-full bg-background" variant={"secondary"}>Continuar</Button>
-            <Button className="w-full bg-transparent hover:text-white hover:bg-white/10" variant={"outline"}>Voltar</Button>
+            <Button className="w-full bg-background" variant={"secondary"} disabled={quantity === 0} onClick={() => router.push('/pags')}>Continuar</Button>
+            <Button className="w-full bg-transparent hover:text-white hover:bg-white/10" variant={"outline"} onClick={() => router.back()}>Voltar</Button>
         </div>
     )
 }            
